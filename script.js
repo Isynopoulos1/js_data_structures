@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,9 +26,26 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  // CALL THIS FUNCTION...
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
-// // ASIGNATING A NEW VALUE IN AN ARRAY
+// ...AND ADDING THIS OPTIONS
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// ASIGNATING A NEW VALUE IN AN ARRAY
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -47,10 +60,10 @@ let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
 // EXPECTED OUTPUT:  vegetarian, italian
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
 
 // TRICK TO HAVE THE SAME RESULT, EXPECTED OUTPUT:  vegetarian, italian
 [main, secondary] = [secondary, main];
@@ -72,3 +85,32 @@ console.log(i, j, k);
 //DEFAULT VALUES
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+
+// ///////////////////////////////////////////////DESTRUCTURING OBJECTS
+const { name, openingHours, categories } = restaurant;
+console.log('output', name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+
+console.log('output test', name, openingHours, categories);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log('hey!', menu, starters);
+
+// mutating variables
+// let a = 111;
+// let b = 999;
+
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+// console.log(a, b);
+
+//NESTED OBJECTS
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
