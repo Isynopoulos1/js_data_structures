@@ -38,6 +38,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 // ...AND ADDING THIS OPTIONS
@@ -118,50 +122,86 @@ restaurant.orderDelivery({
 // } = openingHours;
 // console.log(open, close);
 
+// ///////////////////////////////////////////////REST PATTERN
+
+// 1) DESTRUCTURING
+// SPREAD, because is on the RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+console.log('SOY UN SPREAD', arr);
+
+//REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(' SOUN UN REST PATTERN', a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+// console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// 2) FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(4, 5, 7, 2, 3);
+add(4, 7, 8, 9, 6, 4, 3, 2);
+
+// TOMARÁ LA FUNCION ADD Y SUMARA LOS ELEMENTOS EN EL ARRAY AL LLAMAR A LA FUNCIÓN CON EL SPREAD OPERATOR
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 // ///////////////////////////////////////////////SPREAD OPERATOR
 
-const array = [7, 8, 9];
-const badNewArr = [1, 2, array[0], array[1], array[2]];
-const newArr = [1, 2, ...array];
-console.log(newArr);
-console.log(...newArr);
+// const array = [7, 8, 9];
+// const badNewArr = [1, 2, array[0], array[1], array[2]];
+// const newArr = [1, 2, ...array];
+// console.log(newArr);
+// console.log(...newArr);
 
-// ADDING A NEW ELEMENT IN THE ARRAY WITH SPREAD OPERATOR
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-// console.log(newMenu);
+// // ADDING A NEW ELEMENT IN THE ARRAY WITH SPREAD OPERATOR
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// // console.log(newMenu);
 
-// COPY ARRAY
-const mainMenuCopy = [...restaurant.mainMenu];
+// // COPY ARRAY
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-//JOIN 2 ARRAYS
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// //JOIN 2 ARRAYS
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
 // ITERABLES : ARRAYS, STRINGS, MAPS, SETS, NOT OBJECTS
 
-const str = 'Isela';
-const letters = [...str, , ' A.'];
-console.log(letters);
+// const str = 'Isela';
+// const letters = [...str, , ' A.'];
+// console.log(letters);
 
-//Real world example
-const ingredients = [
-  prompt("let's make pasta! Ingredient 1"),
-  prompt("let's make pasta! Ingredient 2"),
-  prompt("let's make pasta! Ingredient 3"),
-];
+// //Real world example
+// const ingredients = [
+//   prompt("let's make pasta! Ingredient 1"),
+//   prompt("let's make pasta! Ingredient 2"),
+//   prompt("let's make pasta! Ingredient 3"),
+// ];
 
-console.log(ingredients);
+// console.log(ingredients);
 
-// TO CALL THE PASTA FUNCTION
-// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-// WITH SPREAD OPERATOR
-restaurant.orderPasta(...ingredients);
+// // TO CALL THE PASTA FUNCTION
+// // restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// // WITH SPREAD OPERATOR
+// restaurant.orderPasta(...ingredients);
 
-//Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Isela' };
-console.log(newRestaurant);
+// //Objects
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Isela' };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristourante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristourante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
