@@ -44,6 +44,39 @@ const restaurant = {
   },
 };
 
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////SHORT CIRCUITING && ||
+//Use ANY data type , return ANY data type, short circuiting, returns any TRUTHY VALUE in the console
+
+console.log('------OR------');
+console.log(3 || 'jonas');
+console.log('' || 'JONAS');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// SI EXISTE restaurant.numGuests ? regresa restaurant.numGuests y si no (:) devuelve 10
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('------AND------');
+//  returns any FALSY VALUE in the console
+
+console.log(0 && 'isela');
+console.log(7 && 'erwan');
+console.log(null && 'isela');
+console.log(23 && 'isela' && 8 && 0 && null);
+
+// practical example
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
 // ...AND ADDING THIS OPTIONS
 restaurant.orderDelivery({
   time: '22:30',
