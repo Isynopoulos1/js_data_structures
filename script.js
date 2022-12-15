@@ -44,31 +44,41 @@ const restaurant = {
   },
 };
 
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// ///////////////////////////////// NULLISH OPERATOR (??)
+
+//nulish : nulland undefined(NOT or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log('correct', guestCorrect);
+
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////SHORT CIRCUITING && ||
 //Use ANY data type , return ANY data type, short circuiting, returns any TRUTHY VALUE in the console
 
-console.log('------OR------');
-console.log(3 || 'jonas');
-console.log('' || 'JONAS');
-console.log(true || 0);
-console.log(undefined || null);
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log('------OR------');
+// console.log(3 || 'jonas');
+// console.log('' || 'JONAS');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-// SI EXISTE restaurant.numGuests ? regresa restaurant.numGuests y si no (:) devuelve 10
-restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// // SI EXISTE restaurant.numGuests ? regresa restaurant.numGuests y si no (:) devuelve 10
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
-console.log('------AND------');
-//  returns any FALSY VALUE in the console
+// console.log('------AND------');
+// //  returns any FALSY VALUE in the console
 
-console.log(0 && 'isela');
-console.log(7 && 'erwan');
-console.log(null && 'isela');
-console.log(23 && 'isela' && 8 && 0 && null);
+// console.log(0 && 'isela');
+// console.log(7 && 'erwan');
+// console.log(null && 'isela');
+// console.log(23 && 'isela' && 8 && 0 && null);
 
 // practical example
 
@@ -157,40 +167,40 @@ restaurant.orderDelivery({
 
 // ///////////////////////////////////////////////REST PATTERN
 
-// 1) DESTRUCTURING
-// SPREAD, because is on the RIGHT side of =
-const arr = [1, 2, ...[3, 4]];
-console.log('SOY UN SPREAD', arr);
+// // 1) DESTRUCTURING
+// // SPREAD, because is on the RIGHT side of =
+// const arr = [1, 2, ...[3, 4]];
+// console.log('SOY UN SPREAD', arr);
 
-//REST, because on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(' SOUN UN REST PATTERN', a, b, others);
+// //REST, because on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(' SOUN UN REST PATTERN', a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-// console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// // console.log(pizza, risotto, otherFood);
 
-// Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-// console.log(weekdays);
+// // Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// // console.log(weekdays);
 
-// 2) FUNCTIONS
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
-add(2, 3);
-add(4, 5, 7, 2, 3);
-add(4, 7, 8, 9, 6, 4, 3, 2);
+// // 2) FUNCTIONS
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(4, 5, 7, 2, 3);
+// add(4, 7, 8, 9, 6, 4, 3, 2);
 
-// TOMARÁ LA FUNCION ADD Y SUMARA LOS ELEMENTOS EN EL ARRAY AL LLAMAR A LA FUNCIÓN CON EL SPREAD OPERATOR
-const x = [23, 5, 7];
-add(...x);
+// // TOMARÁ LA FUNCION ADD Y SUMARA LOS ELEMENTOS EN EL ARRAY AL LLAMAR A LA FUNCIÓN CON EL SPREAD OPERATOR
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 // ///////////////////////////////////////////////SPREAD OPERATOR
 
 // const array = [7, 8, 9];
