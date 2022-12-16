@@ -332,7 +332,7 @@ const game = {
     ],
   ],
   score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
   date: 'Nov 9th, 2037',
   odds: {
     team1: 1.33,
@@ -377,3 +377,18 @@ const team2 = game.odds.team2;
 console.log(team2);
 
 //6
+
+const printGoals = function (...players1) {
+  let scored = 0;
+  for (let i = 0; i < players1.length; i++) scored += players1[i];
+  console.log(game.scored);
+
+  return scored;
+};
+printGoals();
+
+//7
+const isplayer1winder = game.odds.team1 > game.odds.team2 && 'player 1 winner';
+const isplayer2winder = game.odds.team1 < game.odds.team2 && 'player 2 winner';
+
+console.log(isplayer1winder || isplayer2winder);
