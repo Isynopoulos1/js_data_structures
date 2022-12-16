@@ -46,13 +46,43 @@ const restaurant = {
 
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
-console.log(guests);
+// console.log(guests);
 
-// ///////////////////////////////// NULLISH OPERATOR (??)
+// // ///////////////////////////////// NULLISH OPERATOR (??)
 
 //nulish : nulland undefined(NOT or '')
 const guestCorrect = restaurant.numGuests ?? 10;
-console.log('correct', guestCorrect);
+// console.log('correct', guestCorrect);
+
+// /////////////////////////////////////LOGICAL ASSIGMENT OPERATORS
+
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+// THIS SHORT CUITING (OR)  RETURNS ANY TRUTHY VALUE
+
+// /////////////////////////////////////////////////////OR ASSIGMENT OPERATOR(TRUTHY VALUE)
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// its the same that this below:
+/* rest1.numGuestes ||= 10*/
+/* rest2.numGuestes ||= 10*/
+
+// /////////////////////////////////////////////////////NULLISH ASSIGMENT OPERATOR(null or undefined)
+rest1.numGuestes ??= 10;
+rest2.numGuestes ??= 10;
+
+// /////////////////////////////////////////////////////AND ASSIGMENT OPERATOR(FALSY VALUE)
+rest1.owner = rest1.owner && '<ANONYMUS>';
+rest2.owner = rest2.owner && '<ANONYMUS>';
+console.log(rest1);
+console.log(rest2);
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////SHORT CIRCUITING && ||
 //Use ANY data type , return ANY data type, short circuiting, returns any TRUTHY VALUE in the console
