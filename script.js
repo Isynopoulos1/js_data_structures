@@ -388,7 +388,7 @@ const printGoals = function (...players1) {
 printGoals();
 
 //7
-const isplayer1winder = game.odds.team1 > game.odds.team2 && 'player 1 winner';
-const isplayer2winder = game.odds.team1 < game.odds.team2 && 'player 2 winner';
+const isWinner1 = game.odds.team1 > game.odds.team2 && 'player 1 winner';
+const isWinner2 = game.odds.team1 < game.odds.team2 && 'player 2 winner';
 
-console.log(isplayer1winder || isplayer2winder);
+console.log(isWinner1 || isWinner2);
