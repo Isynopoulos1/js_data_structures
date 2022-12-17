@@ -390,5 +390,5 @@ printGoals();
 //7
 const isWinner1 = game.odds.team1 > game.odds.team2 && 'player 1 winner';
 const isWinner2 = game.odds.team1 < game.odds.team2 && 'player 2 winner';
-
+// or to return a truthy value
 console.log(isWinner1 || isWinner2);
