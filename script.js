@@ -345,7 +345,7 @@ const game = {
 const [players1, players2] = game.players;
 console.log(game.players);
 
-//2
+//2 - v1
 
 const gk = players1[0];
 console.log('BM GOAL KEEPER NAME:', players1[0]);
@@ -356,39 +356,75 @@ console.log('FIELD PLAYERS', fieldPlayers1);
 const fieldPlayers2 = players2.slice(1);
 console.log('FIELD PLAYERS', fieldPlayers2);
 
-//3
-const allPlayers = game.players1;
-console.log('ALL PLAYERS', allPlayers);
+//2 - v2
 
-//4
+const [gk2, ...fieldPlayers] = players1;
+console.log('Im the option 2', gk2, fieldPlayers);
+
+//3 - v1
+const allPlayers = game.players;
+console.log('ALL PLAYERS1', allPlayers);
+
+//3 - v2
+const AllPlayers = [...players1, ...players2];
+console.log('ALL PLAYERS2', AllPlayers);
+
+//4-v1
 const players1Final = [...players1];
 players1Final.unshift('Thiago', 'Coutinho', 'Perisic');
 console.log('PLAYERS COPY', players1Final);
 
-//5
+//4-v2
+const playersFinal2 = [...players1, 'Thiago', 'Perisic', 'Couthinho'];
+console.log('PLAYERS COPY 2', playersFinal2);
 
-const team1 = game.odds.team1;
-console.log(team1);
+//5 - v1
 
-const draw = game.odds.x;
-console.log(draw);
+// const team1 = game.odds.team1;
+// console.log(team1);
 
-const team2 = game.odds.team2;
-console.log(team2);
+// const draw = game.odds.x;
+// console.log(draw);
 
-//6
+// const team2 = game.odds.team2;
+// console.log(team2);
 
-const printGoals = function (...players1) {
-  let scored = 0;
-  for (let i = 0; i < players1.length; i++) scored += players1[i];
-  console.log(game.scored);
+//5 - v2
 
-  return scored;
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+//6-v1
+
+// const printGoals = function (...players1) {
+//   let scored = 0;
+//   for (let i = 0; i < players1.length; i++) scored += players1[i];
+//   console.log(game.scored);
+
+//   return scored;
+// };
+// printGoals();
+
+//6-v2
+
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length}goals scored`);
 };
-printGoals();
 
-//7
+printGoals(...game.scored);
+
+console.log(game.scored);
+
+//7-v1
 const isWinner1 = game.odds.team1 > game.odds.team2 && 'player 1 winner';
 const isWinner2 = game.odds.team1 < game.odds.team2 && 'player 2 winner';
 // or to return a truthy value
 console.log(isWinner1 || isWinner2);
+
+//7-v2
+
+team1 < team2 && console.log('team 1 is more likely to win');
+team1 > team2 && console.log('team 2 is more likely to win');
