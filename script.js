@@ -5,44 +5,44 @@
 //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // // Data needed for first part of the section
-// const restaurant = {
-//   name: 'Classico Italiano',
-//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
-//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
-//   order: function (starterIndex, mainIndex) {
-//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-//   },
-//   // CALL THIS FUNCTION...
-//   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-//     console.log(
-//       `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-//     );
-//   },
-//   orderPasta: function (ing1, ing2, ing3) {
-//     console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-//   },
-//   orderPizza: function (mainIngredient, ...otherIngredients) {
-//     console.log(mainIngredient);
-//     console.log(otherIngredients);
-//   },
-// };
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  // CALL THIS FUNCTION...
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
 
 // restaurant.numGuests = 0;
 // const guests = restaurant.numGuests || 10;
@@ -300,101 +300,101 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-//1
-const [players1, players2] = game.players;
-console.log(game.players);
+// //1
+// const [players1, players2] = game.players;
+// console.log(game.players);
 
-//2 - v1
+// //2 - v1
 
-const gk = players1[0];
-console.log('BM GOAL KEEPER NAME:', players1[0]);
+// const gk = players1[0];
+// console.log('BM GOAL KEEPER NAME:', players1[0]);
 
-const fieldPlayers1 = players1.slice(1);
-console.log('FIELD PLAYERS', fieldPlayers1);
+// const fieldPlayers1 = players1.slice(1);
+// console.log('FIELD PLAYERS', fieldPlayers1);
 
-const fieldPlayers2 = players2.slice(1);
-console.log('FIELD PLAYERS', fieldPlayers2);
+// const fieldPlayers2 = players2.slice(1);
+// console.log('FIELD PLAYERS', fieldPlayers2);
 
-//2 - v2
+// //2 - v2
 
-const [gk2, ...fieldPlayers] = players1;
-console.log('Im the option 2', gk2, fieldPlayers);
+// const [gk2, ...fieldPlayers] = players1;
+// console.log('Im the option 2', gk2, fieldPlayers);
 
-//3 - v1
-const allPlayers = game.players;
-console.log('ALL PLAYERS1', allPlayers);
+// //3 - v1
+// const allPlayers = game.players;
+// console.log('ALL PLAYERS1', allPlayers);
 
-//3 - v2
-const AllPlayers = [...players1, ...players2];
-console.log('ALL PLAYERS2', AllPlayers);
+// //3 - v2
+// const AllPlayers = [...players1, ...players2];
+// console.log('ALL PLAYERS2', AllPlayers);
 
 //4-v1
-const players1Final = [...players1];
-players1Final.unshift('Thiago', 'Coutinho', 'Perisic');
-console.log('PLAYERS COPY', players1Final);
+// const players1Final = [...players1];
+// players1Final.unshift('Thiago', 'Coutinho', 'Perisic');
+// console.log('PLAYERS COPY', players1Final);
 
-//4-v2
-const playersFinal2 = [...players1, 'Thiago', 'Perisic', 'Couthinho'];
-console.log('PLAYERS COPY 2', playersFinal2);
+// //4-v2
+// const playersFinal2 = [...players1, 'Thiago', 'Perisic', 'Couthinho'];
+// console.log('PLAYERS COPY 2', playersFinal2);
 
-//5 - v1
+// //5 - v1
 
-// const team1 = game.odds.team1;
-// console.log(team1);
+// // const team1 = game.odds.team1;
+// // console.log(team1);
 
-// const draw = game.odds.x;
-// console.log(draw);
+// // const draw = game.odds.x;
+// // console.log(draw);
 
-// const team2 = game.odds.team2;
-// console.log(team2);
+// // const team2 = game.odds.team2;
+// // console.log(team2);
 
-//5 - v2
+// //5 - v2
 
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
 
 //6-v1
 
@@ -409,22 +409,40 @@ console.log(team1, draw, team2);
 
 //6-v2
 
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(`${players.length}goals scored`);
-};
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(`${players.length}goals scored`);
+// };
 
-printGoals(...game.scored);
+// printGoals(...game.scored);
 
-console.log(game.scored);
+// console.log(game.scored);
 
-//7-v1
-const isWinner1 = game.odds.team1 > game.odds.team2 && 'player 1 winner';
-const isWinner2 = game.odds.team1 < game.odds.team2 && 'player 2 winner';
-// or to return a truthy value
-console.log(isWinner1 || isWinner2);
+// //7-v1
+// const isWinner1 = game.odds.team1 > game.odds.team2 && 'player 1 winner';
+// const isWinner2 = game.odds.team1 < game.odds.team2 && 'player 2 winner';
+// // or to return a truthy value
+// console.log(isWinner1 || isWinner2);
 
-//7-v2
+// //7-v2
 
-team1 < team2 && console.log('team 1 is more likely to win');
-team1 > team2 && console.log('team 2 is more likely to win');
+// team1 < team2 && console.log('team 1 is more likely to win');
+// team1 > team2 && console.log('team 2 is more likely to win');
+
+// ///////////////////////////////////////////////LOOPING ARRAYS- THE FOR -OF LOOP
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+// ENTRIES METHOD
+
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
+
+// DESTRUCTURING USING ENTRIES METHOD AND OF
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}, ${el}`);
+}
+console.log([...menu.entries()]);
