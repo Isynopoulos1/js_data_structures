@@ -50,10 +50,44 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+if (restaurant.hours.mon) console.log('test', restaurant.hours.mon.open);
+if (restaurant.hours.fri) console.log('test', restaurant.hours.fri.open);
 
+if (restaurant.hours && restaurant.hours.mon)
+  console.log('test2', restaurant.hours.mon.open);
+
+// ///////////////////////////////////////////////WITH OPTIONAL CHAINING
+//si el restaurante abre los lunes? arroja el horario
+console.log('OPTIONAL CHAINING ', restaurant.hours?.mon?.open);
+
+// ///////////////////////////////////////////////LOOPING WITH FOR - OF
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+
+  // USING NULLISH OPERATOR
+  const open = restaurant.hours[day]?.open ?? 'closed';
+  console.log(`on ${day}, we open at ${open}`);
+}
+
+// ///////////////////////////////////////////////METHODS
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method doesnt exist');
 // restaurant.numGuests = 0;
 // const guests = restaurant.numGuests || 10;
 // // console.log(guests);
+
+// ///////////////////////////////////////////////ARRAYS
+const users = [{ name: 'Jonas', email: 'iselabla@hosdha' }];
+// optional chaining(?.) and nullish operator(??)
+// if exists .? otherwise ??
+
+console.log(users[0]?.name ?? 'User array empty');
+
+// USING IF
+if (users.length > 0) console.log(users[0]?.name);
 
 // // // ///////////////////////////////// NULLISH OPERATOR (??)
 
@@ -438,18 +472,18 @@ GOOD LUCK 😀
 
 // ///////////////////////////////////////////////LOOPING ARRAYS- THE FOR -OF LOOP
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-// ENTRIES METHOD
+// // ENTRIES METHOD
 
-// for (const item of menu.entries()) {
-//   console.log(item);
+// // for (const item of menu.entries()) {
+// //   console.log(item);
+// // }
+
+// // DESTRUCTURING USING ENTRIES METHOD AND OF
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}, ${el}`);
 // }
-
-// DESTRUCTURING USING ENTRIES METHOD AND OF
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}, ${el}`);
-}
-console.log([...menu.entries()]);
+// console.log([...menu.entries()]);
