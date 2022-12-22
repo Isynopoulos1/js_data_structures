@@ -546,15 +546,24 @@ GOOD LUCK 😀
 
 //1
 
-// const loopingPlayers = () => {
-//   for (const player of game.scored) {
-//     console.log(`goal: ${game.scored.length}, ${player}`);
-//   }
-// };
-// loopingPlayers();
-
 const entries = Object.entries(game.scored);
 
 for (const goal of entries) {
-  console.log(`goals ${entries} : ${goal}`);
+  console.log(`goals ${entries} : ${goal}`); //+1
 }
+
+//2
+
+const arr = [1.33, 3.25, 6.5];
+const avg = arr.reduce((a, b) => a + b) / arr.length;
+console.log(`The Odds avg is ${avg}`);
+
+//3
+
+const oddsEntries = Object.values(game.odds);
+console.log(`odds entries ${oddsEntries}`);
+
+const [x, y, z] = oddsEntries;
+console.log(`Odd of victory Bayern Munich: ${oddsEntries[0]}`);
+console.log(`Odd of draw: ${oddsEntries[1]}`);
+console.log(`Odd of victory Borrussia Dortmund:${oddsEntries[2]}`);
