@@ -53,73 +53,73 @@ const restaurant = {
 
 // ///////////////////////////////////////////////OBJECT KEYS
 
-// PROPERTY NAMES
+// // PROPERTY NAMES
 const properties = Object.keys(hours);
 console.log(properties);
-// console.log(`We are open on ${properties.length}days`);
-// with for-of
-// for (const day of Object.keys(hours)) {
-//   console.log(day);
-// }
+console.log(`We are open on ${properties.length}days`);
+// // with for-of
+for (const day of Object.keys(hours)) {
+  console.log(day);
+}
 
-// LENGHT AND FOR-OF
+// // LENGHT AND FOR-OF
 let OpenStrg = `we are open on ${properties.length} days`;
 for (const day of properties) {
   OpenStrg += ` ${day}`;
-  console.log(OpenStrg);
+  console.log('OPEN STRING', OpenStrg);
 }
-// PROPERTY VALUES
+// // PROPERTY VALUES
 
-const values = Object.values(hours);
-console.log(values);
+// const values = Object.values(hours);
+// console.log(values);
 
-//ENTIRE OBJEST
-const entries = Object.entries(hours);
-console.log('entries', entries);
+// //ENTIRE OBJEST
+// const entries = Object.entries(hours);
+// console.log('entries', entries);
 
-//[KEY,VALUE]
-for (const [day, { open, close }] of entries) {
-  console.log(`On ${day} we are open at ${open} and we are close at ${close}`);
-}
+// //[KEY,VALUE]
+// for (const [day, { open, close }] of entries) {
+//   console.log(`On ${day} we are open at ${open} and we are close at ${close}`);
+// }
 
-if (restaurant.hours.mon) console.log('test', restaurant.hours.mon.open);
-if (restaurant.hours.fri) console.log('test', restaurant.hours.fri.open);
+// if (restaurant.hours.mon) console.log('test', restaurant.hours.mon.open);
+// if (restaurant.hours.fri) console.log('test', restaurant.hours.fri.open);
 
-if (restaurant.hours && restaurant.hours.mon)
-  console.log('test2', restaurant.hours.mon.open);
+// if (restaurant.hours && restaurant.hours.mon)
+//   console.log('test2', restaurant.hours.mon.open);
 
-// ///////////////////////////////////////////////WITH OPTIONAL CHAINING
-//si el restaurante abre los lunes? arroja el horario
-console.log('OPTIONAL CHAINING ', restaurant.hours?.mon?.open);
+// // ///////////////////////////////////////////////WITH OPTIONAL CHAINING
+// //si el restaurante abre los lunes? arroja el horario
+// console.log('OPTIONAL CHAINING ', restaurant.hours?.mon?.open);
 
-// ///////////////////////////////////////////////LOOPING WITH FOR - OF
+// // ///////////////////////////////////////////////LOOPING WITH FOR - OF
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-for (const day of days) {
-  console.log(day);
+// for (const day of days) {
+//   console.log(day);
 
-  // USING NULLISH OPERATOR
-  const open = restaurant.hours[day]?.open ?? 'closed';
-  console.log(`on ${day}, we open at ${open}`);
-}
+//   // USING NULLISH OPERATOR
+//   const open = restaurant.hours[day]?.open ?? 'closed';
+//   console.log(`on ${day}, we open at ${open}`);
+// }
 
-// ///////////////////////////////////////////////METHODS
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method doesnt exist');
-// restaurant.numGuests = 0;
-// const guests = restaurant.numGuests || 10;
-// // console.log(guests);
+// // ///////////////////////////////////////////////METHODS
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method doesnt exist');
+// // restaurant.numGuests = 0;
+// // const guests = restaurant.numGuests || 10;
+// // // console.log(guests);
 
-// ///////////////////////////////////////////////ARRAYS
-const users = [{ name: 'Jonas', email: 'iselabla@hosdha' }];
-// optional chaining(?.) and nullish operator(??)
-// if exists .? otherwise ??
+// // ///////////////////////////////////////////////ARRAYS
+// const users = [{ name: 'Jonas', email: 'iselabla@hosdha' }];
+// // optional chaining(?.) and nullish operator(??)
+// // if exists .? otherwise ??
 
-console.log(users[0]?.name ?? 'User array empty');
+// console.log(users[0]?.name ?? 'User array empty');
 
-// USING IF
-if (users.length > 0) console.log(users[0]?.name);
+// // USING IF
+// if (users.length > 0) console.log(users[0]?.name);
 
 // // // ///////////////////////////////// NULLISH OPERATOR (??)
 
@@ -373,46 +373,46 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-// const game = {
-//   team1: 'Bayern Munich',
-//   team2: 'Borrussia Dortmund',
-//   players: [
-//     [
-//       'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-//     ],
-//     [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-//     ],
-//   ],
-//   score: '4:0',
-//   scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
 // //1
 // const [players1, players2] = game.players;
@@ -504,9 +504,9 @@ GOOD LUCK 😀
 
 // ///////////////////////////////////////////////LOOPING ARRAYS- THE FOR -OF LOOP
 
-// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// for (const item of menu) console.log(item);
+for (const item of menu) console.log(item);
 
 // // ENTRIES METHOD
 
@@ -515,7 +515,46 @@ GOOD LUCK 😀
 // // }
 
 // // DESTRUCTURING USING ENTRIES METHOD AND OF
-// for (const [i, el] of menu.entries()) {
-//   console.log(`${i + 1}, ${el}`);
-// }
-// console.log([...menu.entries()]);
+for (const [i, el] of menu.entries()) {
+  console.log('ITEMS', `${i + 1}, ${el}`);
+}
+// console.log( [...menu.entries()]);
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+//1
+
+// const loopingPlayers = () => {
+//   for (const player of game.scored) {
+//     console.log(`goal: ${game.scored.length}, ${player}`);
+//   }
+// };
+// loopingPlayers();
+
+const entries = Object.entries(game.scored);
+
+for (const goal of entries) {
+  console.log(`goals ${entries} : ${goal}`);
+}
