@@ -549,7 +549,13 @@ GOOD LUCK 😀
 const entries = Object.entries(game.scored);
 
 for (const goal of entries) {
-  console.log(`goals ${entries} : ${goal}`); //+1
+  console.log(`goals  ${goal}`); //+1
+}
+
+//1 - v2 TO LOG IT AS A LIST FROM 1
+
+for (const [i, player] of game.scored.entries()) {
+  console.log(` Goal ${i + 1}: ${player}`);
 }
 
 //2
@@ -558,12 +564,26 @@ const arr = [1.33, 3.25, 6.5];
 const avg = arr.reduce((a, b) => a + b) / arr.length;
 console.log(`The Odds avg is ${avg}`);
 
+// 2 - V2
+
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log('avg version 2', average);
 //3
 
 const oddsEntries = Object.values(game.odds);
 console.log(`odds entries ${oddsEntries}`);
 
 const [x, y, z] = oddsEntries;
-console.log(`Odd of victory Bayern Munich: ${oddsEntries[0]}`);
+console.log(`Odd of victory ${game.team1}: ${oddsEntries[0]}`);
 console.log(`Odd of draw: ${oddsEntries[1]}`);
-console.log(`Odd of victory Borrussia Dortmund:${oddsEntries[2]}`);
+console.log(`Odd of victory ${game.team2}: ${oddsEntries[2]}`);
+
+// 3-v2
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamString} : ${odd}`);
+}
