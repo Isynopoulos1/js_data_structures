@@ -550,6 +550,23 @@ console.log(new Set(['waiter', 'chef', 'waiter', 'manager']).size, 'SIZE!');
 
 console.log(new Set('IselaValdezAlarcon').size);
 
+/////////////////////////////////////// MAPS
+
+const res = new Map();
+res.set('name', 'classico');
+res.set(1, 'firenze, italy');
+console.log(res.set(2, 'lisbon, portugal'));
+res
+  .set('categories', ['italian', 'pizzeria'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
+console.log(res.get('name'));
+
+const time = 21;
+console.log(res.get(time > res.get('open') && time < res.get('close')));
+
 ///////////////////////////////////////
 // Coding Challenge #2
 
