@@ -54,20 +54,20 @@ const restaurant = {
 // ///////////////////////////////////////////////OBJECT KEYS
 
 // // PROPERTY NAMES
-const properties = Object.keys(hours);
-console.log(properties);
-console.log(`We are open on ${properties.length}days`);
-// // with for-of
-for (const day of Object.keys(hours)) {
-  console.log(day);
-}
+// const properties = Object.keys(hours);
+// console.log(properties);
+// console.log(`We are open on ${properties.length}days`);
+// // // with for-of
+// for (const day of Object.keys(hours)) {
+//   console.log(day);
+// }
 
-// // LENGHT AND FOR-OF
-let OpenStrg = `we are open on ${properties.length} days`;
-for (const day of properties) {
-  OpenStrg += ` ${day}`;
-  console.log('OPEN STRING', OpenStrg);
-}
+// // // LENGHT AND FOR-OF
+// let OpenStrg = `we are open on ${properties.length} days`;
+// for (const day of properties) {
+//   OpenStrg += ` ${day}`;
+//   console.log('OPEN STRING', OpenStrg);
+// }
 // // PROPERTY VALUES
 
 // const values = Object.values(hours);
@@ -504,21 +504,51 @@ const game = {
 
 // ///////////////////////////////////////////////LOOPING ARRAYS- THE FOR -OF LOOP
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-// // ENTRIES METHOD
+// // // ENTRIES METHOD
 
-// // for (const item of menu.entries()) {
-// //   console.log(item);
-// // }
+// // // for (const item of menu.entries()) {
+// // //   console.log(item);
+// // // }
 
-// // DESTRUCTURING USING ENTRIES METHOD AND OF
-for (const [i, el] of menu.entries()) {
-  console.log('ITEMS', `${i + 1}, ${el}`);
-}
+// // // DESTRUCTURING USING ENTRIES METHOD AND OF
+// for (const [i, el] of menu.entries()) {
+//   console.log('ITEMS', `${i + 1}, ${el}`);
+// }
 // console.log( [...menu.entries()]);
+
+/////////////////////////////////////// SETS
+
+const orderSet = new Set([
+  'pasta',
+  'pizza',
+  'rissotto',
+  'pasta',
+  'pizza',
+  'lasagna',
+]);
+console.log(orderSet);
+console.log(new Set('Isela'));
+console.log(orderSet.size);
+console.log(orderSet.has('pizza'));
+console.log(orderSet.has('bolognesa'));
+console.log(orderSet.add('garlic bread'));
+console.log(orderSet.delete('garlic bread'));
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// example
+const staff = ['waiter', 'chef', 'manager', 'waiter', 'chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(['waiter', 'chef', 'waiter', 'manager']).size, 'SIZE!');
+
+console.log(new Set('IselaValdezAlarcon').size);
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -546,44 +576,44 @@ GOOD LUCK 😀
 
 //1
 
-const entries = Object.entries(game.scored);
+// const entries = Object.entries(game.scored);
 
-for (const goal of entries) {
-  console.log(`goals  ${goal}`); //+1
-}
+// for (const goal of entries) {
+//   console.log(`goals  ${goal}`); //+1
+// }
 
-//1 - v2 TO LOG IT AS A LIST FROM 1
+// //1 - v2 TO LOG IT AS A LIST FROM 1
 
-for (const [i, player] of game.scored.entries()) {
-  console.log(` Goal ${i + 1}: ${player}`);
-}
+// for (const [i, player] of game.scored.entries()) {
+//   console.log(` Goal ${i + 1}: ${player}`);
+// }
 
-//2
+// //2
 
-const arr = [1.33, 3.25, 6.5];
-const avg = arr.reduce((a, b) => a + b) / arr.length;
-console.log(`The Odds avg is ${avg}`);
+// const arr = [1.33, 3.25, 6.5];
+// const avg = arr.reduce((a, b) => a + b) / arr.length;
+// console.log(`The Odds avg is ${avg}`);
 
-// 2 - V2
+// // 2 - V2
 
-const odds = Object.values(game.odds);
-let average = 0;
-for (const odd of odds) average += odd;
-average /= odds.length;
-console.log('avg version 2', average);
-//3
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log('avg version 2', average);
+// //3
 
-const oddsEntries = Object.values(game.odds);
-console.log(`odds entries ${oddsEntries}`);
+// const oddsEntries = Object.values(game.odds);
+// console.log(`odds entries ${oddsEntries}`);
 
-const [x, y, z] = oddsEntries;
-console.log(`Odd of victory ${game.team1}: ${oddsEntries[0]}`);
-console.log(`Odd of draw: ${oddsEntries[1]}`);
-console.log(`Odd of victory ${game.team2}: ${oddsEntries[2]}`);
+// const [x, y, z] = oddsEntries;
+// console.log(`Odd of victory ${game.team1}: ${oddsEntries[0]}`);
+// console.log(`Odd of draw: ${oddsEntries[1]}`);
+// console.log(`Odd of victory ${game.team2}: ${oddsEntries[2]}`);
 
-// 3-v2
+// // 3-v2
 
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamString} : ${odd}`);
-}
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamString} : ${odd}`);
+// }
