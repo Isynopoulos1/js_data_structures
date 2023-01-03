@@ -567,6 +567,17 @@ console.log(res.get('name'));
 const time = 21;
 console.log(res.get(time > res.get('open') && time < res.get('close')));
 
+console.log(res.has('categories'));
+res.delete(2);
+// res.clear();
+
+const arr = [1, 2];
+res.set(arr, 'test');
+res.set(document.querySelector('h1'), 'heading');
+console.log(res);
+console.log(res.size);
+console.log(res.get(arr));
+
 ///////////////////////////////////////
 // Coding Challenge #2
 
