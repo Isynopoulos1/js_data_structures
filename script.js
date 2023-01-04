@@ -608,6 +608,11 @@ console.log(answer);
 
 console.log(question.get(question.get('correct') === answer));
 
+//convert map to array
+console.log(...question);
+console.log(question.entries(), 'ENTRIES');
+console.log([...question.keys(), 'KEYS']);
+console.log(question.values(), 'VALUES');
 ///////////////////////////////////////
 // Coding Challenge #2
 
