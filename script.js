@@ -578,6 +578,24 @@ console.log(res);
 console.log(res.size);
 console.log(res.get(arr));
 
+/////////////////////////////////////// MAPS ITERATION
+
+const question = new Map([
+  ['what is the best language in the world?'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'js'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'try again'],
+]);
+console.log(question);
+
+//convert object to map
+console.log(Object.entries(hours));
+
+const HoursMap = new Map(Object.entries(hours));
+console.log(HoursMap);
 ///////////////////////////////////////
 // Coding Challenge #2
 
