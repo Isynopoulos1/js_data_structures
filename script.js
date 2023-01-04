@@ -581,7 +581,7 @@ console.log(res.get(arr));
 /////////////////////////////////////// MAPS ITERATION
 
 const question = new Map([
-  ['what is the best language in the world?'],
+  ['question', 'what is the best language in the world?'],
   [1, 'c'],
   [2, 'java'],
   [3, 'js'],
@@ -596,6 +596,18 @@ console.log(Object.entries(hours));
 
 const HoursMap = new Map(Object.entries(hours));
 console.log(HoursMap);
+
+//quiz app
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`answer ${key} : ${value}`);
+}
+const answer = Number(prompt('your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
 ///////////////////////////////////////
 // Coding Challenge #2
 
