@@ -7,49 +7,49 @@
 // // Data needed for first part of the section
 
 //Creating a seprate object
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const hours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const hours = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[5]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  // ES6 enhaced object literals
-  hours,
+//   // ES6 enhaced object literals
+//   hours,
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  // CALL THIS FUNCTION...
-  orderDelivery({ starterIndex, mainIndex, time, address }) {
-    console.log(
-      `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-  },
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   // CALL THIS FUNCTION...
+//   orderDelivery({ starterIndex, mainIndex, time, address }) {
+//     console.log(
+//       `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+//   },
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
 
 // ///////////////////////////////////////////////OBJECT KEYS
 
@@ -530,7 +530,7 @@ const orderSet = new Set([
   'pizza',
   'lasagna',
 ]);
-console.log(orderSet);
+console.log('whats order SET', orderSet);
 console.log(new Set('Isela'));
 console.log(orderSet.size);
 console.log(orderSet.has('pizza'));
@@ -592,10 +592,10 @@ const question = new Map([
 console.log(question);
 
 //convert object to map
-console.log(Object.entries(hours));
+// console.log(Object.entries(hours));
 
-const HoursMap = new Map(Object.entries(hours));
-console.log(HoursMap);
+// const HoursMap = new Map(Object.entries(hours));
+// console.log(HoursMap);
 
 //quiz app
 console.log(question.get('question'));
@@ -603,10 +603,10 @@ console.log(question.get('question'));
 for (const [key, value] of question) {
   if (typeof key === 'number') console.log(`answer ${key} : ${value}`);
 }
-const answer = Number(prompt('your answer'));
-console.log(answer);
+// const answer = Number(prompt('your answer'));
+// console.log(answer);
 
-console.log(question.get(question.get('correct') === answer));
+// console.log(question.get(question.get('correct') === answer));
 
 //convert map to array
 console.log(...question);
@@ -680,3 +680,36 @@ GOOD LUCK 😀
 //   const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
 //   console.log(`Odd of ${teamString} : ${odd}`);
 // }
+
+///////////////////////////////////////
+// Coding Challenge #3
+
+/* 
+Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
+
+1. Create an array 'events' of the different game events that happened (no duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
+
+GOOD LUCK 😀
+*/
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+//1
+const events = [...gameEvents.values()];
+console.log('NO DUPLICATED', new Set(events));
