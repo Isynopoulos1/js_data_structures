@@ -564,8 +564,8 @@ res
   .set(false, 'we are closed');
 console.log(res.get('name'));
 
-const time = 21;
-console.log(res.get(time > res.get('open') && time < res.get('close')));
+// const time = 21;
+// console.log(res.get(time > res.get('open') && time < res.get('close')));
 
 console.log(res.has('categories'));
 res.delete(2);
@@ -713,3 +713,20 @@ const gameEvents = new Map([
 //1
 const events = [...gameEvents.values()];
 console.log('NO DUPLICATED', new Set(events));
+
+//2
+console.log(gameEvents.delete(64, 'Yellow card'));
+console.log('deleted', gameEvents);
+
+//3
+console.log(`an event happend ${90 / gameEvents.size} minutes`);
+const time = [...gameEvents.keys()].pop();
+console.log('un key', time);
+console.log(`an event happend ${time / gameEvents.size} minutes`);
+
+//4
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF] ${min} : ${event}`);
+}
