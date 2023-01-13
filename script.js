@@ -749,5 +749,55 @@ console.log(airline.indexOf('r'));
 console.log(airline.lastIndexOf('r'));
 //  TO KNOW THE FIRST POSITION OF A LETTER( IF IT IS LOWERCASE IT WILL PUT -1)
 console.log(airline.indexOf('Portugal'));
-// indicar posicion dentro de un string y meter valor
-console.log('hola', airline.slice(4));
+// extraer una posicion dentro de un string y meter valor(siempre devueve una cadena)
+console.log(airline.slice(4));
+// principio y fin de extraccion
+console.log(airline.slice(4, 7));
+
+// extraer una string  a partir de un espacio entre strings
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ')));
+
+// extraer strings de posicion negativa
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+/////////////////////////////////////// SLICE IN A FUNCTION
+//OP1
+const checkMiddleSeat = seat => {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('youre in the middle');
+  else console.log('youre lucky!');
+};
+checkMiddleSeat('11A');
+checkMiddleSeat('32E');
+checkMiddleSeat('20B');
+
+// OP2
+
+// const checkMiddleSeat = seat => {
+//   if (seat.slice(-1) === 'B' || seat.slice(-1) === 'E')
+//     console.log('youre in the middle');
+//   else console.log('youre lucky!');
+// };
+// checkMiddleSeat('11A');
+// checkMiddleSeat('32E');
+// checkMiddleSeat('20B');
+
+// CONVERTIR STRING EN OBJETO
+console.log(new String('Isela'));
+console.log(typeof new String('Isela'));
+// CONVERTIR OBJETO EN STRING
+console.log(typeof new String('Isela').slice(1));
+
+// cambiar minusculas y mayusculas
+console.log(airline.toUpperCase());
+console.log(airline.toLowerCase());
+
+// arreglar letra mayuscula en string
+const passenger = 'iSela'; //ISELA
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
