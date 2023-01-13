@@ -373,46 +373,46 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Davies', 'Muller', 'Lewandowski', 'Kimmich'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
 // //1
 // const [players1, players2] = game.players;
@@ -522,74 +522,74 @@ const game = {
 
 /////////////////////////////////////// SETS
 
-const orderSet = new Set([
-  'pasta',
-  'pizza',
-  'rissotto',
-  'pasta',
-  'pizza',
-  'lasagna',
-]);
-console.log('whats order SET', orderSet);
-console.log(new Set('Isela'));
-console.log(orderSet.size);
-console.log(orderSet.has('pizza'));
-console.log(orderSet.has('bolognesa'));
-console.log(orderSet.add('garlic bread'));
-console.log(orderSet.delete('garlic bread'));
-console.log(orderSet);
+// const orderSet = new Set([
+//   'pasta',
+//   'pizza',
+//   'rissotto',
+//   'pasta',
+//   'pizza',
+//   'lasagna',
+// ]);
+// console.log('whats order SET', orderSet);
+// console.log(new Set('Isela'));
+// console.log(orderSet.size);
+// console.log(orderSet.has('pizza'));
+// console.log(orderSet.has('bolognesa'));
+// console.log(orderSet.add('garlic bread'));
+// console.log(orderSet.delete('garlic bread'));
+// console.log(orderSet);
 
-for (const order of orderSet) console.log(order);
+// for (const order of orderSet) console.log(order);
 
-// example
-const staff = ['waiter', 'chef', 'manager', 'waiter', 'chef'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// // example
+// const staff = ['waiter', 'chef', 'manager', 'waiter', 'chef'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
 
-console.log(new Set(['waiter', 'chef', 'waiter', 'manager']).size, 'SIZE!');
+// console.log(new Set(['waiter', 'chef', 'waiter', 'manager']).size, 'SIZE!');
 
-console.log(new Set('IselaValdezAlarcon').size);
+// console.log(new Set('IselaValdezAlarcon').size);
 
 /////////////////////////////////////// MAPS
 
-const res = new Map();
-res.set('name', 'classico');
-res.set(1, 'firenze, italy');
-console.log(res.set(2, 'lisbon, portugal'));
-res
-  .set('categories', ['italian', 'pizzeria'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
-console.log(res.get('name'));
+// const res = new Map();
+// res.set('name', 'classico');
+// res.set(1, 'firenze, italy');
+// console.log(res.set(2, 'lisbon, portugal'));
+// res
+//   .set('categories', ['italian', 'pizzeria'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'we are open')
+//   .set(false, 'we are closed');
+// console.log(res.get('name'));
 
 // const time = 21;
 // console.log(res.get(time > res.get('open') && time < res.get('close')));
 
-console.log(res.has('categories'));
-res.delete(2);
+// console.log(res.has('categories'));
+// res.delete(2);
 // res.clear();
 
-const arr = [1, 2];
-res.set(arr, 'test');
-res.set(document.querySelector('h1'), 'heading');
-console.log(res);
-console.log(res.size);
-console.log(res.get(arr));
+// const arr = [1, 2];
+// res.set(arr, 'test');
+// res.set(document.querySelector('h1'), 'heading');
+// console.log(res);
+// console.log(res.size);
+// console.log(res.get(arr));
 
 /////////////////////////////////////// MAPS ITERATION
 
-const question = new Map([
-  ['question', 'what is the best language in the world?'],
-  [1, 'c'],
-  [2, 'java'],
-  [3, 'js'],
-  ['correct', 3],
-  [true, 'correct'],
-  [false, 'try again'],
-]);
-console.log(question);
+// const question = new Map([
+//   ['question', 'what is the best language in the world?'],
+//   [1, 'c'],
+//   [2, 'java'],
+//   [3, 'js'],
+//   ['correct', 3],
+//   [true, 'correct'],
+//   [false, 'try again'],
+// ]);
+// console.log(question);
 
 //convert object to map
 // console.log(Object.entries(hours));
@@ -598,21 +598,21 @@ console.log(question);
 // console.log(HoursMap);
 
 //quiz app
-console.log(question.get('question'));
+// console.log(question.get('question'));
 
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`answer ${key} : ${value}`);
-}
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`answer ${key} : ${value}`);
+// }
 // const answer = Number(prompt('your answer'));
 // console.log(answer);
 
 // console.log(question.get(question.get('correct') === answer));
 
 //convert map to array
-console.log(...question);
-console.log(question.entries(), 'ENTRIES');
-console.log([...question.keys(), 'KEYS']);
-console.log(question.values(), 'VALUES');
+// console.log(...question);
+// console.log(question.entries(), 'ENTRIES');
+// console.log([...question.keys(), 'KEYS']);
+// console.log(question.values(), 'VALUES');
 ///////////////////////////////////////
 // Coding Challenge #2
 
@@ -696,37 +696,58 @@ Let's continue with our football betting app! This time, we have a map with a lo
 GOOD LUCK 😀
 */
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-//1
-const events = [...gameEvents.values()];
-console.log('NO DUPLICATED', new Set(events));
+// //1
+// const events = [...gameEvents.values()];
+// console.log('NO DUPLICATED', new Set(events));
 
-//2
-console.log(gameEvents.delete(64, 'Yellow card'));
-console.log('deleted', gameEvents);
+// //2
+// console.log(gameEvents.delete(64, 'Yellow card'));
+// console.log('deleted', gameEvents);
 
-//3
-console.log(`an event happend ${90 / gameEvents.size} minutes`);
-const time = [...gameEvents.keys()].pop();
-console.log('un key', time);
-console.log(`an event happend ${time / gameEvents.size} minutes`);
+// //3
+// console.log(`an event happend ${90 / gameEvents.size} minutes`);
+// const time = [...gameEvents.keys()].pop();
+// console.log('un key', time);
+// console.log(`an event happend ${time / gameEvents.size} minutes`);
 
-//4
+// //4
 
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? 'FIRST' : 'SECOND';
-  console.log(`[${half} HALF] ${min} : ${event}`);
-}
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${half} HALF] ${min} : ${event}`);
+// }
+
+/////////////////////////////////////// STRINGS
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B337'[0]);
+console.log(airline.length);
+
+//TO KNOW THE FIRST POSITION OF A LETTER
+console.log(airline.indexOf('r'));
+
+// TO KNOW THE LAST POSITION OF A LETTER
+console.log(airline.lastIndexOf('r'));
+//  TO KNOW THE FIRST POSITION OF A LETTER( IF IT IS LOWERCASE IT WILL PUT -1)
+console.log(airline.indexOf('Portugal'));
+// indicar posicion dentro de un string y meter valor
+console.log('hola', airline.slice(4));
