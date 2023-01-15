@@ -784,6 +784,7 @@ checkMiddleSeat('20B');
 // checkMiddleSeat('32E');
 // checkMiddleSeat('20B');
 
+/////////////////////////////////////// STRINGS
 // CONVERTIR STRING EN OBJETO
 console.log(new String('Isela'));
 console.log(typeof new String('Isela'));
@@ -795,6 +796,8 @@ console.log(airline.toUpperCase());
 console.log(airline.toLowerCase());
 
 // arreglar letra mayuscula en string
+
+/////////////////////////////////////// SLICE IN A FUNCTION
 const passenger = 'iSela'; //ISELA
 const passengerLower = passenger.toLowerCase();
 console.log(passengerLower);
@@ -808,10 +811,51 @@ const login = ' Hello@Isela.Io \n';
 
 const lowerEmail = login.toLowerCase();
 
+/////////////////////////////////////// TRIM
 //método trim es para quitar espacios en blanco
-const trimmedEmail = lowerEmail.trim();
-console.log(trimmedEmail);
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
 
 //se pueden corregir el mail en una sola variable usando ambos métodos
 const normalizedEmail = login.toLocaleLowerCase().trim();
 console.log(normalizedEmail);
+//obetener un valor booleano
+console.log(email === normalizedEmail);
+
+/////////////////////////////////////// REPLACE
+const priceEuro = '288, 63€';
+const priceDollar = priceEuro.replace('€', '$').replace(',', '.');
+console.log(priceDollar);
+
+const annuncement =
+  'all passengers must goint to boarding door 23, boarding door 23!';
+console.log(annuncement.replace('door', 'gate'));
+// para reemplazar de forma global dos mismas strings(door) /door/g
+console.log(annuncement.replace(/door/g, 'gate'));
+
+//booleans
+/////////////////////////////////////// INCLUDES
+
+const plane2 = 'Airbus A320hsg';
+console.log(plane2.includes('320'));
+console.log(plane2.includes('Boeing'));
+/////////////////////////////////////// STARTS WITH
+console.log(plane2.startsWith('Air'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('hsg')) {
+  console.log('part oF THE nEwbus family');
+}
+
+//practice exercise
+
+const checkBaggage = items => {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun'))
+    console.log('You cant aboard the plane');
+  else {
+    console.log('you can aboard the plane :)');
+  }
+};
+checkBaggage('I have a Knife');
+checkBaggage('I have a Gun ');
+checkBaggage(' I have Food');
