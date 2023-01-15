@@ -801,3 +801,17 @@ console.log(passengerLower);
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
+
+//comparing emails
+const email = 'hello@isela.io';
+const login = ' Hello@Isela.Io \n';
+
+const lowerEmail = login.toLowerCase();
+
+//método trim es para quitar espacios en blanco
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+//se pueden corregir el mail en una sola variable usando ambos métodos
+const normalizedEmail = login.toLocaleLowerCase().trim();
+console.log(normalizedEmail);
