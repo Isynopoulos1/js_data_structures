@@ -7,49 +7,49 @@
 // // Data needed for first part of the section
 
 //Creating a seprate object
-// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-// const hours = {
-//   [weekdays[3]]: {
-//     open: 12,
-//     close: 22,
-//   },
-//   [weekdays[4]]: {
-//     open: 11,
-//     close: 23,
-//   },
-//   [weekdays[5]]: {
-//     open: 0, // Open 24 hours
-//     close: 24,
-//   },
-// };
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const hours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 
-// const restaurant = {
-//   name: 'Classico Italiano',
-//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
-//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-//   // ES6 enhaced object literals
-//   hours,
+  // ES6 enhaced object literals
+  hours,
 
-//   order(starterIndex, mainIndex) {
-//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-//   },
-//   // CALL THIS FUNCTION...
-//   orderDelivery({ starterIndex, mainIndex, time, address }) {
-//     console.log(
-//       `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-//     );
-//   },
-//   orderPasta(ing1, ing2, ing3) {
-//     console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-//   },
-//   orderPizza(mainIngredient, ...otherIngredients) {
-//     console.log(mainIngredient);
-//     console.log(otherIngredients);
-//   },
-// };
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  // CALL THIS FUNCTION...
+  orderDelivery({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
 
 // ///////////////////////////////////////////////OBJECT KEYS
 
@@ -733,34 +733,34 @@ GOOD LUCK 😀
 
 /////////////////////////////////////// STRINGS
 
-const airline = 'TAP Air Portugal';
-const plane = 'A320';
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log('B337'[0]);
-console.log(airline.length);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B337'[0]);
+// console.log(airline.length);
 
-//TO KNOW THE FIRST POSITION OF A LETTER
-console.log(airline.indexOf('r'));
+// //TO KNOW THE FIRST POSITION OF A LETTER
+// console.log(airline.indexOf('r'));
 
-// TO KNOW THE LAST POSITION OF A LETTER
-console.log(airline.lastIndexOf('r'));
-//  TO KNOW THE FIRST POSITION OF A LETTER( IF IT IS LOWERCASE IT WILL PUT -1)
-console.log(airline.indexOf('Portugal'));
-// extraer una posicion dentro de un string y meter valor(siempre devueve una cadena)
-console.log(airline.slice(4));
-// principio y fin de extraccion
-console.log(airline.slice(4, 7));
+// // TO KNOW THE LAST POSITION OF A LETTER
+// console.log(airline.lastIndexOf('r'));
+// //  TO KNOW THE FIRST POSITION OF A LETTER( IF IT IS LOWERCASE IT WILL PUT -1)
+// console.log(airline.indexOf('Portugal'));
+// // extraer una posicion dentro de un string y meter valor(siempre devueve una cadena)
+// console.log(airline.slice(4));
+// // principio y fin de extraccion
+// console.log(airline.slice(4, 7));
 
-// extraer una string  a partir de un espacio entre strings
-console.log(airline.slice(0, airline.indexOf(' ')));
-console.log(airline.slice(airline.lastIndexOf(' ')));
+// // extraer una string  a partir de un espacio entre strings
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ')));
 
-// extraer strings de posicion negativa
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// // extraer strings de posicion negativa
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
 /////////////////////////////////////// SLICE IN A FUNCTION
 //OP1
@@ -786,30 +786,30 @@ checkMiddleSeat('20B');
 
 /////////////////////////////////////// STRINGS
 // CONVERTIR STRING EN OBJETO
-console.log(new String('Isela'));
-console.log(typeof new String('Isela'));
-// CONVERTIR OBJETO EN STRING
-console.log(typeof new String('Isela').slice(1));
+// console.log(new String('Isela'));
+// console.log(typeof new String('Isela'));
+// // CONVERTIR OBJETO EN STRING
+// console.log(typeof new String('Isela').slice(1));
 
-// cambiar minusculas y mayusculas
-console.log(airline.toUpperCase());
-console.log(airline.toLowerCase());
+// // cambiar minusculas y mayusculas
+// console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
 
-// arreglar letra mayuscula en string
+// // arreglar letra mayuscula en string
 
-/////////////////////////////////////// SLICE IN A FUNCTION
-const passenger = 'iSela'; //ISELA
-const passengerLower = passenger.toLowerCase();
-console.log(passengerLower);
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// /////////////////////////////////////// SLICE IN A FUNCTION
+// const passenger = 'iSela'; //ISELA
+// const passengerLower = passenger.toLowerCase();
+// console.log(passengerLower);
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-//comparing emails
-const email = 'hello@isela.io';
-const login = ' Hello@Isela.Io \n';
+// //comparing emails
+// const email = 'hello@isela.io';
+// const login = ' Hello@Isela.Io \n';
 
-const lowerEmail = login.toLowerCase();
+// const lowerEmail = login.toLowerCase();
 
 /////////////////////////////////////// TRIM
 //método trim es para quitar espacios en blanco
@@ -817,34 +817,34 @@ const lowerEmail = login.toLowerCase();
 // console.log(trimmedEmail);
 
 //se pueden corregir el mail en una sola variable usando ambos métodos
-const normalizedEmail = login.toLocaleLowerCase().trim();
-console.log(normalizedEmail);
-//obetener un valor booleano
-console.log(email === normalizedEmail);
+// const normalizedEmail = login.toLocaleLowerCase().trim();
+// console.log(normalizedEmail);
+// //obetener un valor booleano
+// console.log(email === normalizedEmail);
 
-/////////////////////////////////////// REPLACE
-const priceEuro = '288, 63€';
-const priceDollar = priceEuro.replace('€', '$').replace(',', '.');
-console.log(priceDollar);
+// /////////////////////////////////////// REPLACE
+// const priceEuro = '288, 63€';
+// const priceDollar = priceEuro.replace('€', '$').replace(',', '.');
+// console.log(priceDollar);
 
-const annuncement =
-  'all passengers must goint to boarding door 23, boarding door 23!';
-console.log(annuncement.replace('door', 'gate'));
-// para reemplazar de forma global dos mismas strings(door) /door/g
-console.log(annuncement.replace(/door/g, 'gate'));
+// const annuncement =
+//   'all passengers must goint to boarding door 23, boarding door 23!';
+// console.log(annuncement.replace('door', 'gate'));
+// // para reemplazar de forma global dos mismas strings(door) /door/g
+// console.log(annuncement.replace(/door/g, 'gate'));
 
-//booleans
-/////////////////////////////////////// INCLUDES
+// //booleans
+// /////////////////////////////////////// INCLUDES
 
-const plane2 = 'Airbus A320hsg';
-console.log(plane2.includes('320'));
-console.log(plane2.includes('Boeing'));
-/////////////////////////////////////// STARTS WITH
-console.log(plane2.startsWith('Air'));
+// const plane2 = 'Airbus A320hsg';
+// console.log(plane2.includes('320'));
+// console.log(plane2.includes('Boeing'));
+// /////////////////////////////////////// STARTS WITH
+// console.log(plane2.startsWith('Air'));
 
-if (plane2.startsWith('Airbus') && plane2.endsWith('hsg')) {
-  console.log('part oF THE nEwbus family');
-}
+// if (plane2.startsWith('Airbus') && plane2.endsWith('hsg')) {
+//   console.log('part oF THE nEwbus family');
+// }
 
 //practice exercise
 
@@ -859,3 +859,25 @@ const checkBaggage = items => {
 checkBaggage('I have a Knife');
 checkBaggage('I have a Gun ');
 checkBaggage(' I have Food');
+
+/////////////////////////////////////// SPLIT
+console.log('a+very+nice+string'.split('+'));
+console.log('Isela Valdez'.split(' '));
+const [firstName, lastName] = 'Isela Alarcon'.split(' ');
+/////////////////////////////////////// JOIN
+const completeName = ['Mrs', firstName, lastName.toUpperCase()].join(' ');
+console.log(completeName);
+
+/////////////////////////////////////// SPLIT + JOIN FUNCTION
+
+const capitalizeName = name => {
+  const names = name.split(' ');
+  const toUpper = [];
+
+  for (const n of names) {
+    toUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(toUpper.join(' '));
+};
+
+capitalizeName('Jessica Ann smith davis');
