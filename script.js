@@ -763,7 +763,7 @@ GOOD LUCK 😀
 // console.log(airline.slice(1, -1));
 
 /////////////////////////////////////// SLICE IN A FUNCTION
-//OP1
+//OP1 slice devuelve una copia desde el principio del array
 const checkMiddleSeat = seat => {
   const s = seat.slice(-1);
   if (s === 'B' || s === 'E') console.log('youre in the middle');
@@ -875,9 +875,35 @@ const capitalizeName = name => {
   const toUpper = [];
 
   for (const n of names) {
-    toUpper.push(n[0].toUpperCase() + n.slice(1));
+    // toUpper.push(n[0].toUpperCase() + n.slice(1));
+    toUpper.push(n.replace(n[0], n[0].toUpperCase()));
   }
   console.log(toUpper.join(' '));
 };
 
 capitalizeName('Jessica Ann smith davis');
+
+/////////////////////////////////////// PADDING, longitud signos
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Isela'.padStart(25, '+'));
+
+/////////////////////////////////////// exercise example
+const maskCreditCard = number => {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(324343242342));
+console.log(maskCreditCard('63453274298359475048543'));
+console.log(maskCreditCard(74852324));
+/////////////////////////////////////// REPEAT
+const message2 = 'bad weather ... all the flights are delayed';
+console.log(message2.repeat(6));
+
+const planesInLine = n => {
+  console.log(`there are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+planesInLine(4);
+planesInLine(12);
+planesInLine(6);
