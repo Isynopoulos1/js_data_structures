@@ -7,49 +7,49 @@
 // // Data needed for first part of the section
 
 //Creating a seprate object
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const hours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const hours = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[5]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  // ES6 enhaced object literals
-  hours,
+//   // ES6 enhaced object literals
+//   hours,
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  // CALL THIS FUNCTION...
-  orderDelivery({ starterIndex, mainIndex, time, address }) {
-    console.log(
-      `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-  },
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   // CALL THIS FUNCTION...
+//   orderDelivery({ starterIndex, mainIndex, time, address }) {
+//     console.log(
+//       `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`Here is you delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+//   },
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
 
 // ///////////////////////////////////////////////OBJECT KEYS
 
@@ -94,15 +94,15 @@ const restaurant = {
 
 // // ///////////////////////////////////////////////LOOPING WITH FOR - OF
 
-// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-// for (const day of days) {
-//   console.log(day);
+for (const day of days) {
+  console.log(day);
 
-//   // USING NULLISH OPERATOR
-//   const open = restaurant.hours[day]?.open ?? 'closed';
-//   console.log(`on ${day}, we open at ${open}`);
-// }
+  //   // USING NULLISH OPERATOR
+  //   const open = restaurant.hours[day]?.open ?? 'closed';
+  //   console.log(`on ${day}, we open at ${open}`);
+}
 
 // // ///////////////////////////////////////////////METHODS
 // console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
@@ -764,14 +764,14 @@ GOOD LUCK 😀
 
 /////////////////////////////////////// SLICE IN A FUNCTION
 //OP1 slice devuelve una copia desde el principio del array
-const checkMiddleSeat = seat => {
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') console.log('youre in the middle');
-  else console.log('youre lucky!');
-};
-checkMiddleSeat('11A');
-checkMiddleSeat('32E');
-checkMiddleSeat('20B');
+// const checkMiddleSeat = seat => {
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('youre in the middle');
+//   else console.log('youre lucky!');
+// };
+// checkMiddleSeat('11A');
+// checkMiddleSeat('32E');
+// checkMiddleSeat('20B');
 
 // OP2
 
@@ -798,12 +798,12 @@ checkMiddleSeat('20B');
 // // arreglar letra mayuscula en string
 
 // /////////////////////////////////////// SLICE IN A FUNCTION
-// const passenger = 'iSela'; //ISELA
-// const passengerLower = passenger.toLowerCase();
-// console.log(passengerLower);
-// const passengerCorrect =
-//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
-// console.log(passengerCorrect);
+const passenger = 'iSela'; //ISELA
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
 
 // //comparing emails
 // const email = 'hello@isela.io';
@@ -848,27 +848,27 @@ checkMiddleSeat('20B');
 
 //practice exercise
 
-const checkBaggage = items => {
-  const baggage = items.toLowerCase();
-  if (baggage.includes('knife') || baggage.includes('gun'))
-    console.log('You cant aboard the plane');
-  else {
-    console.log('you can aboard the plane :)');
-  }
-};
-checkBaggage('I have a Knife');
-checkBaggage('I have a Gun ');
-checkBaggage(' I have Food');
+// const checkBaggage = items => {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun'))
+//     console.log('You cant aboard the plane');
+//   else {
+//     console.log('you can aboard the plane :)');
+//   }
+// };
+// checkBaggage('I have a Knife');
+// checkBaggage('I have a Gun ');
+// checkBaggage(' I have Food');
 
-/////////////////////////////////////// SPLIT
-console.log('a+very+nice+string'.split('+'));
-console.log('Isela Valdez'.split(' '));
-const [firstName, lastName] = 'Isela Alarcon'.split(' ');
-/////////////////////////////////////// JOIN
-const completeName = ['Mrs', firstName, lastName.toUpperCase()].join(' ');
-console.log(completeName);
+// /////////////////////////////////////// SPLIT
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Isela Valdez'.split(' '));
+// const [firstName, lastName] = 'Isela Alarcon'.split(' ');
+// /////////////////////////////////////// JOIN
+// const completeName = ['Mrs', firstName, lastName.toUpperCase()].join(' ');
+// console.log(completeName);
 
-/////////////////////////////////////// SPLIT + JOIN FUNCTION
+// /////////////////////////////////////// SPLIT + JOIN FUNCTION
 
 const capitalizeName = name => {
   const names = name.split(' ');
@@ -883,27 +883,70 @@ const capitalizeName = name => {
 
 capitalizeName('Jessica Ann smith davis');
 
-/////////////////////////////////////// PADDING, longitud signos
-const message = 'Go to gate 23';
-console.log(message.padStart(25, '+').padEnd(30, '+'));
-console.log('Isela'.padStart(25, '+'));
+// /////////////////////////////////////// PADDING, longitud signos
+// const message = 'Go to gate 23';
+// console.log(message.padStart(25, '+').padEnd(30, '+'));
+// console.log('Isela'.padStart(25, '+'));
 
-/////////////////////////////////////// exercise example
-const maskCreditCard = number => {
-  const str = number + '';
-  const last = str.slice(-4);
-  return last.padStart(str.length, '*');
-};
-console.log(maskCreditCard(324343242342));
-console.log(maskCreditCard('63453274298359475048543'));
-console.log(maskCreditCard(74852324));
-/////////////////////////////////////// REPEAT
-const message2 = 'bad weather ... all the flights are delayed';
-console.log(message2.repeat(6));
+// /////////////////////////////////////// exercise example
+// const maskCreditCard = number => {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+// console.log(maskCreditCard(324343242342));
+// console.log(maskCreditCard('63453274298359475048543'));
+// console.log(maskCreditCard(74852324));
+// /////////////////////////////////////// REPEAT
+// const message2 = 'bad weather ... all the flights are delayed';
+// console.log(message2.repeat(6));
 
-const planesInLine = n => {
-  console.log(`there are ${n} planes in line ${'✈️'.repeat(n)}`);
-};
-planesInLine(4);
-planesInLine(12);
-planesInLine(6);
+// const planesInLine = n => {
+//   console.log(`there are ${n} planes in line ${'✈️'.repeat(n)}`);
+// };
+// planesInLine(4);
+// planesInLine(12);
+// planesInLine(6);
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+
+GOOD LUCK 😀
+*/
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+// document.body.append(document.createElement('button'));
+
+// ATTACHING THE EVENT
+document.querySelector('button').addEventListener('click', function () {
+  //pasar el valor del text area a la consola al dar click
+  const text = document.querySelector('textarea').value;
+  console.log(text);
+});
