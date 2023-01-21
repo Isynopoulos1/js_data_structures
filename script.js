@@ -94,15 +94,15 @@
 
 // // ///////////////////////////////////////////////LOOPING WITH FOR - OF
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-for (const day of days) {
-  console.log(day);
+// for (const day of days) {
+//   console.log(day);
 
-  //   // USING NULLISH OPERATOR
-  //   const open = restaurant.hours[day]?.open ?? 'closed';
-  //   console.log(`on ${day}, we open at ${open}`);
-}
+//   // USING NULLISH OPERATOR
+//   const open = restaurant.hours[day]?.open ?? 'closed';
+//   console.log(`on ${day}, we open at ${open}`);
+// }
 
 // // ///////////////////////////////////////////////METHODS
 // console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
@@ -798,12 +798,12 @@ GOOD LUCK 😀
 // // arreglar letra mayuscula en string
 
 // /////////////////////////////////////// SLICE IN A FUNCTION
-const passenger = 'iSela'; //ISELA
-const passengerLower = passenger.toLowerCase();
-console.log(passengerLower);
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passenger = 'iSela'; //ISELA
+// const passengerLower = passenger.toLowerCase();
+// console.log(passengerLower);
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
 // //comparing emails
 // const email = 'hello@isela.io';
@@ -870,18 +870,18 @@ console.log(passengerCorrect);
 
 // /////////////////////////////////////// SPLIT + JOIN FUNCTION
 
-const capitalizeName = name => {
-  const names = name.split(' ');
-  const toUpper = [];
+// const capitalizeName = name => {
+//   const names = name.split(' ');
+//   const toUpper = [];
 
-  for (const n of names) {
-    // toUpper.push(n[0].toUpperCase() + n.slice(1));
-    toUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(toUpper.join(' '));
-};
+//   for (const n of names) {
+//     // toUpper.push(n[0].toUpperCase() + n.slice(1));
+//     toUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(toUpper.join(' '));
+// };
 
-capitalizeName('Jessica Ann smith davis');
+// capitalizeName('Jessica Ann smith davis');
 
 // /////////////////////////////////////// PADDING, longitud signos
 // const message = 'Go to gate 23';
@@ -940,25 +940,47 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
-document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
+// document.body.append(document.createElement('textarea'));
 // document.body.append(document.createElement('button'));
+// // document.body.append(document.createElement('button'));
 
-// ATTACHING THE EVENT
-document.querySelector('button').addEventListener('click', function () {
-  //pasar el valor del text area a la consola al dar click
-  const text = document.querySelector('textarea').value;
-  const rows = text.split('\n');
-  console.log(rows);
+// // ATTACHING THE EVENT
+// document.querySelector('button').addEventListener('click', function () {
+//   //pasar el valor del text area a la consola al dar click
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+//   console.log(rows);
 
-  // to loop inside an array
-  for (const [i, row] of rows.entries()) {
-    const [first, second] = row.toLowerCase().trim().split('_');
+//   // to loop inside an array
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
 
-    const output = `${first}${second.replace(
-      second[0],
-      second[0].toUpperCase()
-    )}`;
-    console.log(`${output.padEnd(20)} ${'✅'.repeat(i + 1)}`);
-  }
-});
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)} ${'✅'.repeat(i + 1)}`);
+//   }
+// });
+
+///////////////////////////////////////
+// String Methods Practice
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed' ? '🔴' : '')}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)}${getCode(to)}(${time.replace(':', 'h')})`.padStart(30);
+  console.log(output);
+}
